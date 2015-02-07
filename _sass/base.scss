@@ -1,0 +1,183 @@
+html, body {
+    background: url("#{$imagedir}/bg.gif");
+    color: #c0c0c0;
+    font-family: "Droid Sans", sans-serif;
+    font-size: $fontsize;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 0;
+    text-align: right;
+    background: rgba(10,10,10,0.75);
+
+    a {
+        margin-right: 1.5em;
+        font-size: 1.2em;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+
+    .home {
+        float: left;
+        margin-left: 1.5em;
+    }
+}
+
+#bar {
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    padding: 2em 0;
+    color: #ffffff;
+    margin: 10em 0 6em 0;
+
+    .cont {
+        width: $contentwidth;
+        margin: auto;
+        text-align: justify;
+
+        .logo {
+            float: left;
+            display: block;
+            width: 200px;
+        }
+
+        .column.right {
+            margin-left: 250px;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 0.8em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            line-height: 1.3em;
+        }
+
+        #buttons {
+            margin-top: 2em;
+            text-align: center;
+        }
+    }
+}
+
+.container {
+    width: $contentwidth;
+    margin: auto;
+    margin-top: 6em;
+    text-align: justify;
+
+    .column.left {
+        float: left;
+        width: $leftcolumnwidth;
+    }
+
+    .column.right {
+        margin-left: $leftcolumnwidth + $columnpadding;
+    }
+
+    $paragraphskip: 1em;
+
+    h1 {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #eeeeee;
+        margin-top: 1.5 * $fontsize;
+        margin-bottom: $fontsize;
+    }
+
+    h2 {
+        @extend h1;
+        font-size: 1.3em;
+    }
+
+    p {
+        margin-bottom: $paragraphskip;
+        line-height: 1.3em;
+    }
+
+    ul {
+        list-style-type: disc;
+        margin-left: 2.5em;
+        margin-bottom: $paragraphskip;
+    }
+
+    li {
+        margin-bottom: 0.5em;
+    }
+
+    a{
+        color: #dd9324;
+    }
+
+    a:hover {
+        color: #7abf47;
+    }
+}
+
+.container.small {
+    width: $contentwidth * 0.75;
+}
+
+.donate-btn {
+    width: 180px;
+    height: 90px;
+    display: block;
+    background-image: url("#{$imagedir}/donate_big.png");
+    margin: auto;
+}
+
+.screenshots {
+    text-align: justify;
+    text-align-last: justify;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+
+    img {
+        width: 0.3 * ($contentwidth - $leftcolumnwidth - $columnpadding);
+    }
+}
+
+.socialmedia {
+    text-align: center;
+    margin-bottom: 2em;
+
+    a {
+        margin: 0 0.5em;
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+    }
+
+    .facebook {
+        background: url("#{$imagedir}/socialmedia/facebook.png");
+        &:hover { background: url("#{$imagedir}/socialmedia/facebook_hover.png"); }
+    }
+
+    .googleplus {
+        background: url("#{$imagedir}/socialmedia/googleplus.png");
+        &:hover { background: url("#{$imagedir}/socialmedia/googleplus_hover.png"); }
+    }
+
+    .twitter {
+        background: url("#{$imagedir}/socialmedia/twitter.png");
+        &:hover { background: url("#{$imagedir}/socialmedia/twitter_hover.png"); }
+    }
+}

@@ -1,95 +1,28 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>c:geo – Geocaching for Android</title>
+---
+layout: default
+---
 
-        <meta charset="utf-8">
-
-        <style type="text/css">
-            * {
-                margin: 0;
-                padding: 0; 
-            }
-
-            html, body {
-                background: url('bg.gif');
-                height: 100%;
-                color: #dddddd;
-                font-family: sans-serif;
-                font-size: 16px;
-            }
-
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-
-            #header {
-                position: fixed;
-                right: 0px;
-                left: 0px;
-                top: 16px;
-                text-align: right;
-            }
-
-            #header a {
-                margin-right: 32px;
-                font-size: 1.2em;
-            }
-
-            #floater {
-                float: left;
-                height: 40%;
-                margin-bottom: -100px;
-            }
-
-            #container {
-                clear: both;
-                width: 800px;
-                height: 250px;
-                margin: auto;
-                text-align: justify;
-            }
-
-            #logo {
-                float: left;
-                display: block;
-                margin-right: 2em;
-            }
-
-            #container h1 {
-                font-weight: bold;
-                font-size: 2em;
-                padding-top: 16px;
-                margin-bottom: 24px;
-            }
-
-            #buttons {
-                margin-top: 32px;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="header">
-            <a href="#">Changelog</a>
-            <a href="#">Support</a>
-            <a href="#">F.A.Q.</a>
-            <a href="#">Code</a>
-            <a href="#">Report Bug</a>
-        </div>
-
-        <div id="floater"></div>
-
-        <div id="container">
-            <img src="cgeo-logo.png" id="logo">
-            <h1>Geocaching for Android</h1>
-            <p>c:geo is an open source, full-featured, always ready-to-go client for geocaching.com (unofficial) and offers basic support for other geocaching platforms (like Opencaching). It does not require a web browser or exports - just download and start right away.</p>
+<div id="bar">
+    <div class="cont">
+        <img src="images/cgeo-logo.png" class="logo">
+        <div class="column right">
+            {% capture content %}{% include description_short.md %}{% endcapture %}
+            {{ content | markdownify }}
             <div id="buttons">
-                <a href="https://play.google.com/store/apps/details?id=cgeo.geocaching"><img src="play.png"></a>
+                <a href="https://play.google.com/store/apps/details?id=cgeo.geocaching"><img src="images/btn_play.png"></a>
                 <span style="margin-right: 40px;">&nbsp;</span>
-                <a href="https://github.com/cgeo/cgeo/releases/latest"><img src="apk.png"></a>
+                <a href="https://github.com/cgeo/cgeo/releases/latest"><img src="images/btn_apk.png"></a>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column left">
+        {% capture mdtmp %}{% include description_long.md %}{% endcapture %}
+        {{ mdtmp | markdownify }}
+    </div>
+    <div class="column right">
+        {% include index_sidebar.html %}
+    </div>
+</div>
